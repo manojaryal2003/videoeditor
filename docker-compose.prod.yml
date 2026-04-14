@@ -1,8 +1,7 @@
-version: "3.9"
 
 services:
   server:
-    image: ${DOCKER_USERNAME}/videoeditor-server:latest
+    image: ghcr.io/manojaryal2003/videoeditor-server:latest
     container_name: videoeditor-server
     restart: unless-stopped
     env_file:
@@ -19,7 +18,7 @@ services:
       start_period: 20s
 
   client:
-    image: ${DOCKER_USERNAME}/videoeditor-client:latest
+    image: ghcr.io/manojaryal2003/videoeditor-client:latest
     container_name: videoeditor-client
     restart: unless-stopped
     expose:
