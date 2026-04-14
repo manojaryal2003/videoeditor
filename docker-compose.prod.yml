@@ -10,7 +10,7 @@ services:
     expose:
       - "5000"
     networks:
-      - app-network
+      - videoeditor-network
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:5000/api/health"]
       interval: 30s
@@ -28,37 +28,9 @@ services:
       server:
         condition: service_healthy
     networks:
-      - app-network
-
-  nginx:
-    image: nginx:alpine
-    container_name: videoeditor-nginx
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - /opt/videoeditor/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - certbot-conf:/etc/letsencrypt:ro
-      - certbot-www:/var/www/certbot:ro
-    depends_on:
-      - client
-      - server
-    networks:
-      - app-network
-
-  certbot:
-    image: certbot/certbot
-    container_name: videoeditor-certbot
-    volumes:
-      - certbot-www:/var/www/certbot
-      - certbot-conf:/etc/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
-volumes:
-  certbot-www:
-  certbot-conf:
+      - videoeditor-network
 
 networks:
-  app-network:
+  videoeditor-network:
     driver: bridge
+    name: videoeditor-network
