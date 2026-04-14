@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function WhatsAppButton() {
-  const number = import.meta.env.VITE_WHATSAPP_NUMBER || '1234567890';
+  const number = '9867213265';
   const message = encodeURIComponent("Hi! I'm interested in your video editing services.");
   const url = `https://wa.me/${number}?text=${message}`;
 
