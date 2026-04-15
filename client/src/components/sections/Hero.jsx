@@ -183,8 +183,8 @@ export default function Hero() {
         className="absolute top-1/2 left-0 w-48 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent origin-left"
       />
 
-      <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 items-center min-h-[calc(100vh-80px)]">
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 pb-16 lg:pb-0">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-8 lg:gap-10 items-center min-h-[calc(100vh-80px)]">
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <motion.div
@@ -289,7 +289,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="relative hidden lg:flex items-center justify-center w-full"
+              className="relative flex items-center justify-center w-full"
             >
               {/* Outer glow */}
               <div className="absolute -inset-6 bg-primary/20 rounded-3xl blur-3xl" />

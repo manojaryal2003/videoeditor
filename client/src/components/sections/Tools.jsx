@@ -27,15 +27,17 @@ const categoryColors = {
 const getInitials = (name) => name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
 
 export default function Tools() {
-  const [tools, setTools] = useState([]);
+  const [tools, setTools] = useState(null);
 
   useEffect(() => {
     api.get('/tools')
-      .then(({ data }) => setTools(data.data?.length ? data.data : defaultTools))
-      .catch(() => setTools(defaultTools));
+      .then(({ data }) => setTools(data.data ?? []))
+      .catch(() => setTools([]));
   }, []);
 
-  const displayTools = tools.length ? tools : defaultTools;
+  if (!tools?.length) return null;
+
+  const displayTools = tools;
 
   const container = {
     hidden: {},
