@@ -12,13 +12,13 @@ const defaultServices = [
     isPopular: false,
   },
   {
-    _id: '2', tier: 'High', title: 'Pro Edit', price: '$249', deliveryTime: '5 days',
+    _id: '2', tier: 'Standard', title: 'Pro Edit', price: '$249', deliveryTime: '5 days',
     description: 'Advanced editing for professional content',
     features: ['Up to 15 min video', 'Advanced transitions', 'Color grading', 'Sound design', 'Motion graphics', '3 revisions', '4K delivery'],
     isPopular: true,
   },
   {
-    _id: '3', tier: 'Advanced', title: 'Cinematic', price: '$499', deliveryTime: '10 days',
+    _id: '3', tier: 'Premium', title: 'Cinematic', price: '$499', deliveryTime: '10 days',
     description: 'Full cinematic production experience',
     features: ['Unlimited duration', 'Cinematic color grade', 'VFX & compositing', 'Custom motion graphics', 'Sound design & mix', 'Unlimited revisions', '4K delivery', 'Priority support'],
     isPopular: false,
@@ -27,8 +27,8 @@ const defaultServices = [
 
 const tierColors = {
   Basic: { gradient: 'from-blue-500/10 to-blue-600/5', border: 'border-blue-500/20', accent: 'text-blue-500', badge: 'bg-blue-500/10 text-blue-400' },
-  High: { gradient: 'from-primary/10 to-accent/5', border: 'border-primary/40', accent: 'text-primary', badge: 'bg-primary/10 text-primary' },
-  Advanced: { gradient: 'from-purple-500/10 to-purple-600/5', border: 'border-purple-500/20', accent: 'text-purple-500', badge: 'bg-purple-500/10 text-purple-400' },
+  Standard: { gradient: 'from-primary/10 to-accent/5', border: 'border-primary/40', accent: 'text-primary', badge: 'bg-primary/10 text-primary' },
+  Premium: { gradient: 'from-purple-500/10 to-purple-600/5', border: 'border-purple-500/20', accent: 'text-purple-500', badge: 'bg-purple-500/10 text-purple-400' },
 };
 
 export default function Services() {

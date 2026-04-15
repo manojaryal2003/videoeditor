@@ -7,6 +7,7 @@ import Modal from '../../components/ui/Modal';
 
 const emptyForm = { tier: 'Basic', title: '', price: '', description: '', deliveryTime: '', features: [], isPopular: false, order: 0 };
 
+
 export default function ManageServices() {
   const [services, setServices] = useState([]);
   const [modal, setModal] = useState(false);
@@ -48,7 +49,7 @@ export default function ManageServices() {
     catch { toast.error('Failed to delete'); }
   };
 
-  const tierColors = { Basic: 'border-blue-500/30', High: 'border-primary/40', Advanced: 'border-purple-500/30' };
+  const tierColors = { Basic: 'border-blue-500/30', Standard: 'border-primary/40', Premium: 'border-purple-500/30' };
 
   return (
     <div>
@@ -91,7 +92,7 @@ export default function ManageServices() {
             <div>
               <label className="admin-label">Tier</label>
               <select value={form.tier} onChange={(e) => setForm((f) => ({ ...f, tier: e.target.value }))} className="admin-input">
-                {['Basic', 'High', 'Advanced'].map((t) => <option key={t}>{t}</option>)}
+                {['Basic', 'Standard', 'Premium'].map((t) => <option key={t}>{t}</option>)}
               </select>
             </div>
             <div>
