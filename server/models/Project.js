@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, default: '' },
-  category: { type: String, enum: ['Video', 'Image', 'Motion', 'Color Grading'], required: true },
+  category: { type: String, enum: ['Videos', 'Shorts', 'Thumbnails', 'Banners'], required: true },
   tags: [{ type: String }],
   mediaUrl: { type: String, required: true },
   mediaPublicId: { type: String, default: '' },
