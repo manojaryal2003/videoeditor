@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ServiceSchema = new mongoose.Schema({
-  tier: { type: String, enum: ['Basic', 'High', 'Advanced'], required: true },
+  tier: { type: String, enum: ['Basic', 'Standard', 'Premium'], required: true },
   title: { type: String, required: true },
   price: { type: String, required: true },
   description: { type: String, default: '' },
